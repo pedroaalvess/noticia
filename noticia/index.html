@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso Online Profissional | Matrículas Oficiais</title>
+  <meta name="description" content="Curso Online Profissional: formação 100% digital, certificado, instrutores qualificados e conteúdo atualizado. Matrículas abertas.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////////////+c5jloAAAAEHRSTlMAAQMEBQYICQoLDA0ODxAgw83lAAAAx0lEQVQY022Q2Q6DMBBFe0MCjDgOj1n8/2vSFIjCEM9uXQ7F94xu6mB6duKcbg9pnkbzdoRSXJG0VKUiXjJxaUkSQwZLoV17XiaFiWWKkdkK20twWvRdrOi6p6Q/JS3U4twkQt5VYi2EkmbsnQ6CQv6i7Tw3iV6KOkzuwi6eGRQoQAez4WmXJJ0XSl3PPaPtkaN/hRypHg7oefLw9fshbAh8DlA8PVyAAAAABJRU5ErkJggg==" />
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #222; margin: 0; padding: 0;}
+    header { background: #fff; border-bottom: 1px solid #eee; padding: 26px 0 16px 0; text-align: center; box-shadow: 0 2px 12px 0 #00000008;}
+    .logo-generated { display: inline-flex; align-items: center; font-size: 1.8rem; font-weight: 800; color: #1848af; gap: 12px; }
+    .logo-circle { background: #1848af; color: #fff; font-weight: bold; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 2px 10px #1848af18;}
+    nav { margin: 16px auto 0 auto; max-width: 900px;}
+    nav a { text-decoration: none; color: #222; margin: 0 14px; font-size: 1rem; opacity: 0.8; transition: opacity 0.2s;}
+    nav a:hover { opacity: 1; color: #1848af;}
+    main { max-width: 900px; margin: 30px auto; background: #fff; padding: 32px 18px; border-radius: 12px; box-shadow: 0 2px 24px 0 #0000000f;}
+    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; }
+    .hero-content { flex: 2; }
+    .hero-img { flex: 1; text-align: center; }
+    .hero-img img { max-width: 280px; border-radius: 18px; box-shadow: 0 6px 28px #1848af13; }
+    .hero h1 { font-size: 2rem; color: #1848af; margin: 0 0 10px 0; }
+    .hero p { font-size: 1.16rem; margin-bottom: 16px;}
+    .btn-cta { display: inline-block; background: #1848af; color: #fff; padding: 12px 34px; border-radius: 8px; font-size: 1.2rem; font-weight: 700; text-decoration: none; margin-top: 12px; box-shadow: 0 2px 16px 0 #1848af17; transition: background 0.2s;}
+    .btn-cta:hover { background: #223e7e;}
+    .benefits { margin: 38px 0; display: flex; flex-wrap: wrap; gap: 24px;}
+    .benefit { flex: 1; min-width: 220px; background: #f3f4f7; padding: 18px; border-radius: 10px; box-shadow: 0 2px 8px #00000010;}
+    .benefit img { height: 42px; margin-bottom: 12px;}
+    .section-title { color: #1848af; margin-bottom: 18px; }
+    .video-section { margin: 38px 0 44px 0; text-align: center; }
+    .video-section iframe { width: 95%; max-width: 600px; height: 340px; border-radius: 14px; box-shadow: 0 2px 24px #0002; border: none;}
+    .tabela-comp { margin: 40px 0 44px 0;}
+    .tabela-comp table { width: 100%; border-collapse: collapse; background: #f8f9ff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 12px #00000009;}
+    .tabela-comp th, .tabela-comp td { padding: 14px 10px; text-align: center; border-bottom: 1px solid #e7e8ed; }
+    .tabela-comp th { background: #e7e8ed; color: #1848af; font-weight: 700; }
+    .tabela-comp tr:last-child td { border-bottom: none;}
+    .parceiros-section {margin: 40px 0 44px 0;text-align:center;}
+    .parceiros-list {display:flex;gap:30px;flex-wrap:wrap;justify-content:center;align-items:center;}
+    .parceiros-list img {height:42px;opacity:0.85;transition:opacity .2s;filter:grayscale(30%);}
+    .parceiros-list img:hover {opacity:1;filter:none;}
+    .depoimentos { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 40px;}
+    .depoimento { flex: 1; min-width: 230px; background: #f8f9ff; border: 1px solid #e7e8ed; padding: 14px 18px; border-radius: 10px;}
+    .depoimento img { width: 48px; height: 48px; border-radius: 50%; margin-bottom: 10px;}
+    .depoimento strong { display: block; margin-top: 6px; color: #1848af;}
+    .faq { margin-bottom: 36px;}
+    .faq-item { margin-bottom: 20px;}
+    .faq-q { font-weight: bold; cursor: pointer; color: #1848af;}
+    .faq-a { display: none; margin-top: 6px;}
+    footer { background: #f3f4f7; color: #666; font-size: 0.98rem; text-align: center; padding: 24px 6px 24px 6px; border-top: 1px solid #eee; margin-top: 40px;}
+    .link-popup { color: #1848af; cursor: pointer; text-decoration: underline;}
+    .legal-links {margin-top:8px;}
+    /* Modal (popup) */
+    .modal-bg { display: none; position: fixed; z-index: 9000; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.28); justify-content: center; align-items: center;}
+    .modal-content { background: #fff; border-radius: 14px; max-width: 600px; width: 98vw; padding: 28px; box-shadow: 0 2px 32px #0002; max-height: 80vh; overflow-y: auto; position: relative;}
+    .modal-content h2 { margin-top: 0; }
+    .close-btn { position: absolute; top: 12px; right: 16px; font-size: 1.7rem; color: #999; cursor: pointer; border: none; background: none;}
+    .accept-btn { display: block; background: #1848af; color: #fff; padding: 10px 22px; border-radius: 8px; font-size: 1.1rem; margin: 26px auto 0 auto; border: none; cursor: pointer; font-weight: bold;}
+    @media (max-width: 800px) {
+      .hero { flex-direction: column; text-align: center;}
+      .hero-img img { max-width: 80vw;}
+      .benefits { flex-direction: column;}
+      .depoimentos { flex-direction: column;}
+      .tabela-comp table {font-size:0.98rem;}
+      .parceiros-list {gap:18px;}
+      .video-section iframe {height:200px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="logo-generated">
+      <span class="logo-circle">C</span> Curso Online Profissional
+    </span>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a class="link-popup" onclick="openModal('termos')">Termos de Uso</a>
+      <a class="link-popup" onclick="openModal('privacidade')">Política de Privacidade</a>
+      <a class="link-popup" onclick="openModal('lgpd')">LGPD</a>
+    </nav>
+  </header>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Curso Online Profissional<br>100% Digital e Certificado</h1>
+        <p>Formação online segura, conteúdo atualizado, com emissão de certificado e suporte dedicado. Matrículas abertas para todo o Brasil.</p>
+        <a class="btn-cta" href="#">Quero Me Inscrever</a>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Estudo Online">
+      </div>
+    </section>
+    <!-- BENEFÍCIOS -->
+    <section class="benefits" id="conteudo">
+      <div class="benefit">
+        <img src="https://img.icons8.com/color/48/000000/certificate.png" alt="Certificado">
+        <strong>Certificação Reconhecida</strong>
+        <p>Receba certificado digital válido em todo Brasil ao concluir o curso.</p>
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/color/48/000000/classroom.png" alt="Acesso Online">
+        <strong>Acesso Imediato</strong>
+        <p>Acesse as aulas logo após a matrícula. Plataforma online disponível 24h.</p>
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/color/48/000000/training.png" alt="Instrutores">
+        <strong>Instrutores Qualificados</strong>
+        <p>Conteúdo elaborado por especialistas e atualizado com as tendências do mercado.</p>
+      </div>
+    </section>
+    <!-- CTA DESTAQUE -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <a class="btn-cta" href="#">Matricule-se Agora</a>
+      <p style="color:#888; margin-top:6px;font-size:0.99rem;">Matrículas abertas para todo Brasil. Vagas limitadas.</p>
+    </div>
+    <!-- SEÇÃO VÍDEO INSTITUCIONAL -->
+    <section class="video-section">
+      <h2 class="section-title">Conheça Mais Sobre o Curso</h2>
+      <iframe src="https://www.youtube.com/embed/aNvKOBrW1IY" allowfullscreen title="Vídeo Institucional"></iframe>
+      <p style="margin-top:14px;color:#555;">Assista ao vídeo para entender como o curso funciona e todos os benefícios para você.</p>
+    </section>
+    <!-- SEÇÃO TABELA COMPARATIVA -->
+    <section class="tabela-comp">
+      <h2 class="section-title">Compare e Veja as Vantagens</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>Curso Online Profissional</th>
+          <th>Ensino Tradicional</th>
+        </tr>
+        <tr>
+          <td>Acesso 24h</td>
+          <td>✔️</td>
+          <td>❌</td>
+        </tr>
+        <tr>
+          <td>Certificado Digital</td>
+          <td>✔️</td>
+          <td>Depende</td>
+        </tr>
+        <tr>
+          <td>Flexibilidade de horários</td>
+          <td>✔️</td>
+          <td>❌</td>
+        </tr>
+        <tr>
+          <td>Atualização de Conteúdo</td>
+          <td>✔️</td>
+          <td>❌</td>
+        </tr>
+        <tr>
+          <td>Suporte ao aluno</td>
+          <td>✔️</td>
+          <td>❌</td>
+        </tr>
+      </table>
+    </section>
+    <!-- SEÇÃO PARCEIROS -->
+    <section class="parceiros-section">
+      <h2 class="section-title">Nossos Parceiros</h2>
+      <div class="parceiros-list">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Parceiro 1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Parceiro 2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Parceiro 3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Parceiro 4">
+      </div>
+      <p style="color:#777;margin-top:10px;font-size:0.98rem;">Empresas e instituições fictícias para fins ilustrativos.</p>
+    </section>
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <h2 class="section-title">Veja o que dizem nossos alunos:</h2>
+      <div class="depoimentos">
+        <div class="depoimento">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Aluna Maria">
+          <span>"O curso é muito bem estruturado, aprendi bastante e consegui aplicar o conhecimento no meu dia a dia. Recomendo!"</span>
+          <strong>Maria S.</strong>
+        </div>
+        <div class="depoimento">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Aluno João">
+          <span>"Plataforma intuitiva, suporte sempre disponível. Gostei do conteúdo e da certificação!"</span>
+          <strong>João L.</strong>
+        </div>
+        <div class="depoimento">
+          <img src="https://randomuser.me/api/portraits/women/80.jpg" alt="Aluna Paula">
+          <span>"Aulas objetivas e atualizadas. Fiquei satisfeita e indico para quem busca qualificação."</span>
+          <strong>Paula G.</strong>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O curso oferece certificado?</div>
+        <div class="faq-a">Sim, ao concluir todas as aulas e avaliação, o aluno recebe certificado digital reconhecido.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como faço para acessar as aulas?</div>
+        <div class="faq-a">Após a matrícula, o acesso é liberado imediatamente. Você poderá assistir às aulas online, pelo computador ou celular, a qualquer hora.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O conteúdo é atualizado?</div>
+        <div class="faq-a">Sim, a equipe revisa periodicamente os materiais para garantir que estejam alinhados com as demandas do mercado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Preciso instalar algum programa?</div>
+        <div class="faq-a">Não! Basta acesso à internet e navegador. Todo conteúdo é online, sem necessidade de download.</div>
+      </div>
+    </section>
+    <!-- SEGURANÇA -->
+    <div style="background:#f3f4f7;border-radius:10px;padding:22px;margin:18px 0 0 0;text-align:center;font-size:0.97rem;">
+      <b>Sua privacidade é prioridade.</b> Todos os dados são protegidos e utilizados apenas para matrícula e suporte, conforme <span class="link-popup" onclick="openModal('privacidade')">Política de Privacidade</span> e em conformidade com a <span class="link-popup" onclick="openModal('lgpd')">LGPD</span>.
+    </div>
+  </main>
+  <footer>
+    © 2025 Curso Online Profissional · Todos os direitos reservados.
+    <div class="legal-links">
+      <span class="link-popup" onclick="openModal('termos')">Termos de Uso</span> |
+      <span class="link-popup" onclick="openModal('privacidade')">Política de Privacidade</span> |
+      <span class="link-popup" onclick="openModal('lgpd')">LGPD</span>
+    </div>
+  </footer>
+
+  <!-- POPUP TERMOS DE USO -->
+  <div class="modal-bg" id="modal-termos">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('termos')">&times;</button>
+      <h2>Termos de Uso</h2>
+      <p>Bem-vindo ao Curso Online Profissional. Ao acessar ou utilizar este site, você concorda integralmente com estes termos:</p>
+      <ul>
+        <li>O acesso aos cursos é exclusivo do aluno cadastrado e intransferível.</li>
+        <li>O uso do site deve respeitar todas as leis vigentes e boas práticas digitais.</li>
+        <li>É proibida a reprodução, distribuição ou comercialização não autorizada do conteúdo.</li>
+        <li>O conteúdo do curso pode ser atualizado periodicamente, visando sempre a melhor experiência do aluno.</li>
+        <li>Nos reservamos o direito de alterar estes termos a qualquer momento, sem aviso prévio.</li>
+      </ul>
+      <button class="accept-btn" onclick="closeModal('termos')">Li e Aceito</button>
+    </div>
+  </div>
+  <!-- POPUP POLÍTICA DE PRIVACIDADE -->
+  <div class="modal-bg" id="modal-privacidade">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('privacidade')">&times;</button>
+      <h2>Política de Privacidade</h2>
+      <p>Valorizamos a sua privacidade. Todas as informações fornecidas são utilizadas exclusivamente para matrícula, suporte e comunicação institucional, conforme previsto na LGPD.</p>
+      <ul>
+        <li>Coletamos apenas dados necessários (nome, e-mail, etc.) no ato da matrícula.</li>
+        <li>Seus dados não são vendidos ou compartilhados com terceiros, exceto em cumprimento à legislação.</li>
+        <li>Armazenamos as informações em ambiente seguro e por tempo determinado para fins acadêmicos e legais.</li>
+        <li>Você pode solicitar a exclusão ou correção dos seus dados a qualquer momento pelo nosso contato.</li>
+        <li>Utilizamos cookies estritamente necessários para o funcionamento do site e análise anônima de acesso.</li>
+      </ul>
+      <button class="accept-btn" onclick="closeModal('privacidade')">Li e Aceito</button>
+    </div>
+  </div>
+  <!-- POPUP LGPD -->
+  <div class="modal-bg" id="modal-lgpd">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('lgpd')">&times;</button>
+      <h2>LGPD - Lei Geral de Proteção de Dados</h2>
+      <p>Estamos totalmente comprometidos com a conformidade à Lei nº 13.709/2018 (LGPD). Veja alguns dos princípios aplicados:</p>
+      <ul>
+        <li>Transparência na coleta e uso dos seus dados pessoais.</li>
+        <li>Finalidade clara e legítima para qualquer dado coletado.</li>
+        <li>Garantia dos direitos do titular, como acesso, correção e exclusão.</li>
+        <li>Proteção contra acesso não autorizado, perda ou vazamento de dados.</li>
+        <li>Dúvidas ou solicitações? Entre em contato por <a href="mailto:contato@cursoonlineprofissional.com">contato@cursoonlineprofissional.com</a>.</li>
+      </ul>
+      <button class="accept-btn" onclick="closeModal('lgpd')">Li e Aceito</button>
+    </div>
+  </div>
+  <script>
+    // Modal popup
+    function openModal(type) {
+      document.getElementById('modal-' + type).style.display = "flex";
+    }
+    function closeModal(type) {
+      document.getElementById('modal-' + type).style.display = "none";
+    }
+    // FAQ
+    function toggleFaq(el) {
+      var next = el.nextElementSibling;
+      if(next.style.display === "block") next.style.display = "none";
+      else next.style.display = "block";
+    }
+    // Termos obrigatório no 1º acesso
+    window.onload = function() {
+      if(!localStorage.getItem('aceitouTermos')) {
+        openModal('termos');
+        document.getElementById('modal-termos').querySelector('.accept-btn').onclick = function() {
+          closeModal('termos');
+          localStorage.setItem('aceitouTermos', '1');
+          setTimeout(() => {
+            if(!localStorage.getItem('aceitouPrivacidade')){
+              openModal('privacidade');
+              document.getElementById('modal-privacidade').querySelector('.accept-btn').onclick = function() {
+                closeModal('privacidade');
+                localStorage.setItem('aceitouPrivacidade', '1');
+                setTimeout(() => {
+                  if(!localStorage.getItem('aceitouLgpd')){
+                    openModal('lgpd');
+                    document.getElementById('modal-lgpd').querySelector('.accept-btn').onclick = function() {
+                      closeModal('lgpd');
+                      localStorage.setItem('aceitouLgpd', '1');
+                    }
+                  }
+                }, 300);
+              }
+            }
+          }, 300);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
