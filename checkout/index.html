@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout do Curso Técnico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #2374e1;
+      --background: #f7faff;
+      --success: #2db981;
+      --danger: #e04545;
+      --border: #e3eaf6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--background);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .main-checkout {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 32px 8px;
+      background: var(--background);
+    }
+    .checkout-container {
+      display: flex;
+      gap: 38px;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px #2374e10c, 0 1.5px 8px #2374e108;
+      padding: 42px 28px;
+      max-width: 950px;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .checkout-info, .checkout-form {
+      flex: 1 1 330px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .checkout-info {
+      border-right: 1.8px solid var(--border);
+      padding-right: 38px;
+      gap: 22px;
+      max-width: 410px;
+    }
+    .logo {
+      margin-bottom: 7px;
+    }
+    .logo svg {
+      width: 72px; height: 72px;
+      border-radius: 14px;
+      filter: drop-shadow(0 2px 12px #2374e13b);
+    }
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #181f29;
+      margin: 0 0 5px 0;
+    }
+    .subtitle {
+      font-size: 1.09rem;
+      color: #48536c;
+      margin-bottom: 7px;
+    }
+    .price-card {
+      background: linear-gradient(115deg,#edf3fa 60%,#f8fffe 100%);
+      border-radius: 15px;
+      padding: 22px 0 13px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 12px #2374e106;
+      border: 1.5px solid var(--border);
+      max-width: 350px;
+      margin: 0 0 0 0;
+    }
+    .price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 3px;
+      letter-spacing: -1px;
+      transition: color .3s;
+    }
+    .price-desc {
+      font-size: 1.03rem;
+      color: #838ca3;
+    }
+    .cupom-row {
+      display: flex;
+      gap: 8px;
+      align-items: stretch;
+      margin: 12px 0 0 0;
+      width: 92%;
+    }
+    .cupom-row input[type="text"] {
+      flex: 2;
+      border-radius: 8px 0 0 8px;
+      border-right: none;
+      border: 1.6px solid var(--border);
+      padding: 12px 14px;
+      font-size: 1.09rem;
+      background: #fafdff;
+    }
+    .cupom-row button {
+      flex: 1;
+      border-radius: 0 8px 8px 0;
+      border: none;
+      background: linear-gradient(91deg,#2374e1 80%,#3ad29f 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.01rem;
+      cursor: pointer;
+      padding: 12px 0;
+      transition: filter 0.15s;
+    }
+    .cupom-row button:hover { filter: brightness(1.12);}
+    .cupom-feedback {
+      font-size: 1em;
+      margin-top: 4px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+    .cupom-success { color: var(--success);}
+    .cupom-error { color: var(--danger);}
+    .extras-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 6px 0 2px 0;
+      align-items: center;
+    }
+    .selo-extra {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #eafcfa;
+      border-radius: 9px;
+      padding: 6px 15px 6px 9px;
+      font-size: 0.98em;
+      font-weight: 500;
+      color: #14ad7a;
+      box-shadow: 0 0 4px #3ad29f11;
+      border: 1px solid #d5f5ea;
+      white-space: nowrap;
+    }
+    .selo-extra svg { font-size: 1.15em; color: #3ad29f;}
+    .selos-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 10px 0 2px 0;
+      flex-wrap: wrap;
+    }
+    .selo-img {
+      height: 28px;
+      width: auto;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1.5px 8px #2374e11d;
+      border: 1.5px solid var(--border);
+      padding: 2px 6px;
+      object-fit: contain;
+      max-width: 60px;
+      display: block;
+    }
+    .garantia-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 1.04em;
+      font-weight: 600;
+      color: #26b080;
+      background: #eafcfa;
+      border-radius: 8px;
+      padding: 7px 14px;
+      border: 1px solid #d5f5ea;
+      max-width: 220px;
+    }
+    .garantia-row svg { color: #f8c84b; font-size: 1.21em;}
+    .depoimentos-row {
+      margin: 7px 0 0 0;
+      display: flex;
+      gap: 11px;
+      flex-direction: column;
+      max-width: 350px;
+    }
+    .depoimento-card {
+      background: #fafdff;
+      border-radius: 9px;
+      padding: 12px 12px 10px 11px;
+      border: 1.2px solid var(--border);
+      box-shadow: 0 2px 8px #2374e106;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .depoimento-foto {
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      object-fit: cover;
+      border: 2px solid #eafcfa;
+    }
+    .depoimento-info { flex: 1; }
+    .depoimento-nome { font-weight: 700; font-size: 1em; color: #2374e1;}
+    .estrelas { color: #f6c545; font-size: 1.07em; letter-spacing: 0.04em;}
+    .depoimento-msg { font-size: 0.97em; color: #555e6c;}
+    .checkout-form {
+      gap: 19px;
+      padding-left: 34px;
+      min-width: 320px;
+      max-width: 470px;
+      width: 100%;
+    }
+    .progress-step {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      margin-bottom: 8px;
+      margin-top: 10px;
+    }
+    .step-circle {
+      background: linear-gradient(135deg,#2374e1 60%,#3ad29f 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 1.5px 8px #2374e11d;
+      border: 3px solid #fff;
+      z-index: 1;
+    }
+    .step-circle.inactive { background: #e9eefa; color: #b9c6dd; border: 3px solid #e9eefa;}
+    .step-bar { width: 38px; height: 5px; background: linear-gradient(90deg,#2374e1 65%,#3ad29f 100%); border-radius: 5px;}
+    .step-bar.inactive { background: #e9eefa;}
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 6px;
+      width: 100%;
+      max-width: 430px;
+    }
+    label { font-weight: 500; color: #444; margin-bottom: 2px; font-size: 1rem;}
+    input, select {
+      padding: 11px 12px;
+      font-size: 1.05rem;
+      border: 1.7px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      background: #fafdff;
+      transition: border .2s, box-shadow .2s;
+      font-family: 'Inter', Arial, sans-serif;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    input:focus, select:focus { border-color: #2374e1; }
+    .payment-methods {
+      display: flex;
+      gap: 14px;
+      margin: 1px 0 8px 0;
+      width: 100%;
+    }
+    .payment-btn {
+      flex: 1;
+      background: #f3f7fc;
+      border: 1.7px solid var(--border);
+      color: #535b73;
+      border-radius: 10px;
+      padding: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.01rem;
+      box-shadow: 0 0 4px #2374e104;
+      transition: border 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .payment-btn.active,
+    .payment-btn:focus,
+    .payment-btn:hover {
+      border-color: #3ad29f;
+      background: #eafcfa;
+      color: #16ad76;
+      box-shadow: 0 0 6px #3ad29f33;
+    }
+    .card-icons, .pix-icon {
+      height: 22px;
+      filter: drop-shadow(0 1.5px 4px #3ad29f11);
+    }
+    .card-flex-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .card-flex-row > div {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .submit-btn {
+      margin-top: 8px;
+      padding: 15px 0;
+      background: linear-gradient(91deg,#2374e1 75%,#3ad29f 100%);
+      color: #fff;
+      font-size: 1.13rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 11px;
+      cursor: pointer;
+      transition: background 0.2s, filter 0.2s;
+      box-shadow: 0 2px 10px #2374e13b;
+      letter-spacing: 0.01em;
+      width: 100%;
+    }
+    .submit-btn:hover, .submit-btn:focus {
+      filter: brightness(1.07);
+      background: linear-gradient(92deg,#1654a5 85%,#3ad29f 100%);
+    }
+    .secure {
+      text-align: center;
+      font-size: 0.98rem;
+      color: #84bb92;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .secure svg { color: #30c65b; font-size: 1.19rem;}
+    .footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 1em;
+      color: #a9b5c7;
+    }
+    .footer a { color: #2374e1; text-decoration: underline dotted; font-weight: 600; margin: 0 8px; font-size: 1em; transition: color 0.16s;}
+    .footer a:hover { color: #3ad29f; }
+    .poweredby { font-size: 0.92rem; color: #b8bed7; text-align: center; margin-top: 7px;}
+    @media (max-width: 1024px) {
+      .checkout-container { flex-direction: column; max-width: 98vw; gap: 32px; padding: 24px 6px;}
+      .checkout-info, .checkout-form { padding: 0; max-width: 100%;}
+      .depoimentos-row, .price-card { max-width: 100%;}
+    }
+    @media (max-width: 700px) {
+      .main-checkout { padding: 8px 0;}
+      .checkout-container { border-radius: 0; box-shadow: none; padding: 0 0 24px 0;}
+      .checkout-form { min-width: 0; padding: 0 8px;}
+      .checkout-info { padding: 0 8px 0 8px; border-right: none;}
+      .depoimentos-row, .price-card, .garantia-row { max-width: 100%;}
+      form {max-width: 100%;}
+    }
+  </style>
+  <script>
+    function aplicarCupom(e){
+      e.preventDefault();
+      var val = document.getElementById('cupom').value.trim().toUpperCase();
+      var feedback = document.getElementById('cupom-feedback');
+      if(val === "BOLSATEC") {
+        feedback.innerHTML = "Cupom aplicado: <b>BOLSATEC</b>! <span style='color:#2db981'>Desconto de 50%</span> ativado!";
+        feedback.className = "cupom-feedback cupom-success";
+        feedback.style.display = "block";
+        document.querySelector(".price").innerHTML = "R$ 4,95";
+        setTimeout(()=>feedback.style.display="none", 3500);
+      } else {
+        feedback.innerHTML = "Cupom inválido!";
+        feedback.className = "cupom-feedback cupom-error";
+        feedback.style.display = "block";
+        setTimeout(()=>feedback.style.display="none", 2000);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const btns = document.querySelectorAll('.payment-btn');
+      const cardFields = document.getElementById('card-fields');
+      const pixFields = document.getElementById('pix-fields');
+      btns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (btn.dataset.method === 'cartao') {
+            cardFields.style.display = '';
+            pixFields.style.display = 'none';
+          } else {
+            cardFields.style.display = 'none';
+            pixFields.style.display = '';
+          }
+        });
+      });
+    });
+    function fakeSubmit(e){
+      e.preventDefault();
+      document.querySelectorAll('.step-circle')[0].classList.add('inactive');
+      document.querySelectorAll('.step-bar')[0].classList.remove('inactive');
+      document.querySelectorAll('.step-circle')[1].classList.remove('inactive');
+      setTimeout(()=>{
+        alert("Este é um checkout simulado para fins de demonstração.");
+        window.location.reload();
+      }, 650);
+    }
+  </script>
+</head>
+<body>
+  <div class="main-checkout">
+    <div class="checkout-container">
+      <div class="checkout-info">
+        <div class="logo">
+          <svg viewBox="0 0 64 64">
+            <rect x="8" y="12" width="48" height="40" rx="14" fill="#2374e1"/>
+            <rect x="20" y="23" width="24" height="18" rx="6.5" fill="#fff"/>
+            <text x="32" y="38.5" text-anchor="middle" font-size="14" font-weight="bold" fill="#2374e1" font-family="Inter">CT</text>
+          </svg>
+        </div>
+        <div class="title">Inscrição Curso Técnico</div>
+        <div class="subtitle">Aproveite a oportunidade, inscreva-se e garanta seu certificado profissional!</div>
+        <div class="price-card">
+          <span class="price">R$ 9,90</span>
+          <span class="price-desc">Inscrição única</span>
+          <form class="cupom-row" onsubmit="aplicarCupom(event)">
+            <input type="text" id="cupom" maxlength="20" placeholder="Cupom de desconto">
+            <button type="submit">Aplicar</button>
+          </form>
+          <div id="cupom-feedback" class="cupom-feedback"></div>
+        </div>
+        <div class="extras-row">
+          <span class="selo-extra">
+            <svg width="17" height="17" viewBox="0 0 20 20"><path fill="currentColor" d="M17.293 5.707a1 1 0 0 0-1.414-1.414L8.586 11.586 6.121 9.121a1 1 0 1 0-1.414 1.415l3 3a1 1 0 0 0 1.414 0l8-8z"/></svg>
+            Certificado digital incluso
+          </span>
+          <span class="selo-extra">
+            <svg width="17" height="17" viewBox="0 0 20 20"><path fill="currentColor" d="M8 2a6 6 0 0 1 12 0c0 2.021-1.197 3.726-3 4.472v3.528a2 2 0 0 1-4 0V6.472A5.985 5.985 0 0 1 8 2Zm6-4a8 8 0 1 0 7.746 10.4A4.998 4.998 0 0 1 20 10a4.978 4.978 0 0 1-2.462-.652l-.58-.387-.108-.07A8.004 8.004 0 0 0 14 2z"/></svg>
+            Mobile Friendly
+          </span>
+          <span class="selo-extra">
+            <svg width="17" height="17" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.75a5.25 5.25 0 0 0-5.25 5.25V9H3.5a.75.75 0 0 0 0 1.5h1.25v5.5A2.25 2.25 0 0 0 7 18.25h6A2.25 2.25 0 0 0 15.25 16V10.5h1.25a.75.75 0 0 0 0-1.5h-1.25V7A5.25 5.25 0 0 0 10 1.75ZM6.25 7a3.75 3.75 0 1 1 7.5 0v2H6.25V7ZM7 16.75a.75.75 0 0 1-.75-.75V10.5h7.5v5.5a.75.75 0 0 1-.75.75H7Z"/></svg>
+            Ambiente seguro SSL
+          </span>
+        </div>
+        <div class="selos-row">
+          <img src="https://i.imgur.com/bCEXA5J.png" alt="SSL" class="selo-img">
+          <img src="https://i.imgur.com/hjzqQGl.png" alt="Reclame Aqui" class="selo-img">
+          <img src="https://i.imgur.com/manSV2a.png" alt="Google" class="selo-img">
+          <img src="https://i.imgur.com/i47g53N.png" alt="Pagamento Seguro" class="selo-img">
+        </div>
+        <div class="garantia-row">
+          <svg width="18" height="18" viewBox="0 0 20 20"><path fill="currentColor" d="M12 2V1a1 1 0 1 0-2 0v1.07A7.002 7.002 0 0 0 3 9v4c0 3.314 2.686 6 6 6s6-2.686 6-6V9a7.002 7.002 0 0 0-5-6.93V2Zm-1 15c-2.206 0-4-1.794-4-4V9a5 5 0 0 1 10 0v4c0 2.206-1.794 4-4 4Zm-2-6a1 1 0 1 1 2 0a1 1 0 0 1-2 0Z"/></svg>
+          Garantia de 7 dias
+        </div>
+        <div class="depoimentos-row">
+          <div class="depoimento-card">
+            <img class="depoimento-foto" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Silva">
+            <div class="depoimento-info">
+              <div class="depoimento-nome">Maria Silva</div>
+              <div class="estrelas">★★★★★</div>
+              <div class="depoimento-msg">Fiz minha inscrição sem complicação, recebi certificado e já estou trabalhando na área! Recomendo muito!</div>
+            </div>
+          </div>
+          <div class="depoimento-card">
+            <img class="depoimento-foto" src="https://randomuser.me/api/portraits/men/23.jpg" alt="João Souza">
+            <div class="depoimento-info">
+              <div class="depoimento-nome">João Souza</div>
+              <div class="estrelas">★★★★★</div>
+              <div class="depoimento-msg">Checkout rápido, site seguro e atendimento nota 10. Muito satisfeito com o curso!</div>
+            </div>
+          </div>
+          <div class="depoimento-card">
+            <img class="depoimento-foto" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Aline Costa">
+            <div class="depoimento-info">
+              <div class="depoimento-nome">Aline Costa</div>
+              <div class="estrelas">★★★★★</div>
+              <div class="depoimento-msg">Apliquei o cupom e paguei só metade! Valeu a pena, super indico!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-form">
+        <div class="progress-step" aria-label="Progresso do checkout">
+          <span class="step-circle">1</span>
+          <span class="step-bar"></span>
+          <span class="step-circle inactive">2</span>
+        </div>
+        <form autocomplete="off" onsubmit="fakeSubmit(event)">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" required maxlength="14" placeholder="000.000.000-00" autocomplete="off">
+          <label for="tel">Celular</label>
+          <input type="tel" id="tel" name="tel" required placeholder="(99) 99999-9999" autocomplete="tel">
+          <div class="payment-methods">
+            <button type="button" class="payment-btn active" data-method="cartao" tabindex="0">
+              <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" class="card-icons" alt="Cartão">
+              Cartão de crédito
+            </button>
+            <button type="button" class="payment-btn" data-method="pix" tabindex="0">
+              <img src="https://i.imgur.com/e2PoJQV.png" class="pix-icon" alt="PIX">
+              PIX
+            </button>
+          </div>
+          <div id="card-fields">
+            <label for="cc-num">Número do cartão</label>
+            <input type="text" id="cc-num" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric">
+            <label for="cc-name">Nome no cartão</label>
+            <input type="text" id="cc-name" placeholder="Como está no cartão">
+            <div class="card-flex-row">
+              <div>
+                <label for="cc-exp">Validade</label>
+                <input type="text" id="cc-exp" placeholder="MM/AA" maxlength="5" inputmode="numeric">
+              </div>
+              <div>
+                <label for="cc-cvv">CVV</label>
+                <input type="password" id="cc-cvv" placeholder="CVV" maxlength="4" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+          <div id="pix-fields" style="display:none;">
+            <label>Chave PIX</label>
+            <input type="text" value="pagamento@cursotecnico.com" readonly>
+            <div style="font-size:0.96em; color:#288C4B; margin-top:7px;">
+              Ao finalizar, simule o pagamento pelo PIX.
+            </div>
+          </div>
+          <button class="submit-btn" type="submit">Finalizar inscrição</button>
+          <div class="secure">
+            <svg width="17" height="17" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.75a5.25 5.25 0 0 0-5.25 5.25V9H3.5a.75.75 0 0 0 0 1.5h1.25v5.5A2.25 2.25 0 0 0 7 18.25h6A2.25 2.25 0 0 0 15.25 16V10.5h1.25a.75.75 0 0 0 0-1.5h-1.25V7A5.25 5.25 0 0 0 10 1.75ZM6.25 7a3.75 3.75 0 1 1 7.5 0v2H6.25V7ZM7 16.75a.75.75 0 0 1-.75-.75V10.5h7.5v5.5a.75.75 0 0 1-.75.75H7Z"/></svg>
+            Ambiente 100% seguro
+          </div>
+        </form>
+        <div class="footer">
+          <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a> | <a href="#">LGPD</a>
+        </div>
+        <div class="poweredby">Checkout simulado inspirado em Kiwify, Perfect Pay, Eduzz</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
